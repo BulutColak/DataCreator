@@ -26,6 +26,21 @@ namespace DataCreator
         private void button1_Click(object sender, EventArgs e)
         {
             
+/*
+---BU KOD DATA LENGTH HARİÇ DİĞER VERİLERİ ÇEKİYOR DATA LENGTH İ NASIL ALACAZ???
+
+SELECT  object_name(c.id)    AS table_name, 
+        c.name               AS column_name,
+        t.name               AS data_type
+FROM  syscolumns AS c 
+INNER JOIN systypes   AS t  ON c.xtype = t.xtype
+WHERE c.id = object_id( 'kkMusteriBilgi' )
+
+
+
+*/
+
+
 
             Excel.Application xlApp = new Excel.Application();
             xlApp.Visible = true;
