@@ -40,16 +40,26 @@ WHERE c.id = object_id( 'kkMusteriBilgi' )
 
 */
 
+       if (comboBox1.SelectedIndex == 0)
+            {
+                  Excel.Application xlApp = new Excel.Application();
+                  xlApp.Visible = true;
+                  xlApp.DisplayAlerts = true;
+
+                  Excel.Workbook wb = xlApp.Workbooks.Add(Excel.XlWBATemplate.xlWBATWorksheet);
+                  Excel.Worksheet ws = (Excel.Worksheet)wb.Sheets[1];
+
+                 
+                 //örnek veri
+                 ws.Cells[1, 1] = "Merhaba - Hello";
+            }
+        else if (comboBox1.SelectedIndex == 1)
+            {
+                //txt dosya çıkılacak
+            }
 
 
-            Excel.Application xlApp = new Excel.Application();
-            xlApp.Visible = true;
-            xlApp.DisplayAlerts = true;
-
-            Excel.Workbook wb = xlApp.Workbooks.Add(Excel.XlWBATemplate.xlWBATWorksheet);
-            Excel.Worksheet ws = (Excel.Worksheet)wb.Sheets[1];
-
-            ws.Cells[1, 1] = "Merhaba - Hello";
+       
         }
     }
 }
