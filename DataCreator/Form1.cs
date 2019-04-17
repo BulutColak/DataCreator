@@ -68,6 +68,11 @@ namespace DataCreator
         public void TabloBilgi()//Tablo metadatasını çeker
         {
 
+
+            string databaseName = textBox3.Text.ToString();
+            string tableName = textBox1.Text.ToString();
+
+
             //Metadata bir dizide tutulacak
 
 
@@ -79,7 +84,7 @@ SELECT  object_name(c.id)    AS table_name,
         t.name               AS data_type
 FROM  syscolumns AS c 
 INNER JOIN systypes   AS t  ON c.xtype = t.xtype
-WHERE c.id = object_id( 'TabloAdı' )
+WHERE c.id = object_id( 'tableName' )
 
 
 
@@ -93,7 +98,11 @@ WHERE c.id = object_id( 'TabloAdı' )
         public void DataOlustur()//Random data oluşturur
         {
 
-            //Random data diziye basılacak
+            //İstenen staır sayısında oluşturulan random data diziye basılacak
+
+            string rowNumber = textBox2.Text.ToString();
+
+
         }
 
 
